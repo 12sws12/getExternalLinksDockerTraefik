@@ -1,0 +1,49 @@
+version: '3.1'
+services:
+  nginx01:
+    image: nginx
+    container_name: nginx01
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.nginx01.entrypoints=https"
+      - "traefik.http.routers.nginx01.rule=Host(`nginx01.test`)"
+      - "traefik.http.routers.nginx01.tls=true"
+      - "traefik.http.routers.nginx01.tls.certresolver=letsEncrypt"
+      - "traefik.http.services.nginx01.loadbalancer.server.port=8069"
+      - "traefik.http.middlewares.nginx01.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.nginx01.redirectscheme.permanent=true"
+
+  nginx02:
+    image: nginx
+    container_name: nginx02
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.nginx02.entrypoints=https"
+      - "traefik.http.routers.nginx02.rule=Host(`nginx02.test`)"
+      - "traefik.http.routers.nginx02.tls=true"
+      - "traefik.http.routers.nginx02.tls.certresolver=letsEncrypt"
+      - "traefik.http.services.nginx02.loadbalancer.server.port=8069"
+      - "traefik.http.middlewares.nginx02.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.nginx02.redirectscheme.permanent=true"
+
+  nginx03:
+    image: nginx
+    container_name: nginx03
+    labels:
+      - "traefik.enable=false"
+
+  nginx04:
+    image: nginx
+    container_name: nginx04
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.nginx04entrypoints=https"
+      - "traefik.http.routers.nginx04.rule=Host(`nginx04.test`)"
+      - "traefik.http.routers.nginx04.tls=true"
+      - "traefik.http.routers.nginx04.tls.certresolver=letsEncrypt"
+      - "traefik.http.services.nginx04.loadbalancer.server.port=8069"
+      - "traefik.http.middlewares.nginx04.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.nginx04.redirectscheme.permanent=true"
