@@ -10,6 +10,6 @@ python manage.py runserver 0.0.0.0:8000
 
 then type http://YOUR_SERVER_IP:8000 in the your browser and you will get a table as a result:
 
-1 Container name = nginx01 / URL (one) = https://nginx01.test
-2 Container name = nginx04 / URL (one) = https://nginx04.test
+1 Container name = nginx01 / URL (one) = https://nginx01.test <br/>
+2 Container name = nginx04 / URL (one) = https://nginx04.test <br/>
 3 Container name = nginx02 / URL (one) = https://nginx02.test 
