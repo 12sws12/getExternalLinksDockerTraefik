@@ -1,10 +1,10 @@
 # getExternalLinksDockerTraefik
 
-if you use docker containers together with the Traffic reverse proxy server and its settings are set in container labels, then this script outputs a summary table for all containers with external links
+if you use docker containers together with the Traefik reverse proxy server (https://traefik.io/) and its settings are set in container labels, then this script outputs a summary table for all containers with external links
 
-for example, there is a docker-compose file in the project.yml for creating a test environment with containers
+for example, there is a docker-compose.yml file in the project for creating a test environment with containers
 
-to run the script, copy it to disk and type:
+to run the script, clone repo to disk and type:
 source venv/bin/activate
 python manage.py runserver 0.0.0.0:8000
 
